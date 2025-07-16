@@ -3,7 +3,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-type Lang = "en" | "ko" | "mn";
+export type Lang = "en" | "ko" | "mn";
 
 const LanguageContext = createContext<{
   lang: Lang;

@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { LANGS } from "@/lib/translations";
 import { useLanguage } from "@/contexts/LanguageContext";
+import type { Lang } from "@/contexts/LanguageContext";
 
 export const LanguageDropdown = () => {
   const { lang, setLang } = useLanguage();
@@ -30,7 +31,7 @@ export const LanguageDropdown = () => {
             <Menu.Item key={item.code}>
               {({ active }) => (
                 <button
-                  onClick={() => setLang(item.code as any)}
+                  onClick={() => setLang(item.code as Lang)}
                   className={`${
                     active
                       ? "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white"

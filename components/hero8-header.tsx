@@ -11,7 +11,7 @@ import { LanguageDropdown } from "./language";
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
-  const { lang, setLang } = useLanguage();
+  const { lang } = useLanguage();
 
   const t = translations[lang];
 
