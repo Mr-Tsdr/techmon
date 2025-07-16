@@ -46,7 +46,7 @@ export default function HeroSection() {
 
               <div className="relative mt-12 lg:mt-0 lg:ml-auto lg:w-1/2">
                 <Image
-                  src="/images/bg.jpg"
+                  src="/images/bg.png"
                   alt="Abstract Object"
                   width={500}
                   height={500}
