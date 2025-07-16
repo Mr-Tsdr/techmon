@@ -67,48 +67,40 @@ export default function HeroSection() {
               </div>
 
               <div className="relative py-2 md:w-[calc(100%-11rem)] ">
-                <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
-                  {[
-                    { src: "nvidia.svg", alt: "Nvidia", w: 20, h: 5 },
-                    { src: "column.svg", alt: "Column", w: 16, h: 4 },
-                    { src: "github.svg", alt: "GitHub", w: 16, h: 4 },
-                    { src: "nike.svg", alt: "Nike", w: 20, h: 5 },
-                    {
-                      src: "lemonsqueezy.svg",
-                      alt: "Lemon Squeezy",
-                      w: 20,
-                      h: 5,
-                    },
-                    { src: "laravel.svg", alt: "Laravel", w: 16, h: 4 },
-                    { src: "lilly.svg", alt: "Lilly", w: 28, h: 7 },
-                    { src: "openai.svg", alt: "OpenAI", w: 24, h: 6 },
-                  ].map((logo, index) => (
-                    <div key={index} className="flex px-6">
-                      <Image
-                        className="h-auto max-h-6 w-auto dark:invert transition-opacity duration-300 hover:opacity-80 "
-                        src={`https://html.tailus.io/blocks/customers/${logo.src}`}
-                        alt={`${logo.alt} Logo`}
-                        width={logo.w}
-                        height={logo.h}
-                      />
-                    </div>
-                  ))}
-                </InfiniteSlider>
+  <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
+    {[
+      { src: "/images/banks/khan.png", alt: "Khan Bank", w: 120, h: 40 },
+      { src: "/images/banks/golomt.png", alt: "Golomt Bank", w: 120, h: 40 },
+      { src: "/images/banks/mbank.png", alt: "M Bank", w: 120, h: 40 },
+      { src: "/images/banks/tdb.png", alt: "TDB Bank", w: 120, h: 40 },
+      { src: "/images/banks/xac.png", alt: "Xac Bank", w: 120, h: 40 },
+    ].map((logo, index) => (
+      <div key={index} className="flex px-6">
+        <Image
+          className="h-auto max-h-12 w-auto dark:invert transition-opacity duration-300 hover:opacity-80"
+          src={logo.src}
+          alt={`${logo.alt} Logo`}
+          width={logo.w}
+          height={logo.h}
+        />
+      </div>
+    ))}
+  </InfiniteSlider>
 
-                <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none" />
-                <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none" />
+  <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none" />
+  <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none" />
 
-                <ProgressiveBlur
-                  className="pointer-events-none absolute left-0 top-0 h-full w-20 dark:bg-gray-950"
-                  direction="left"
-                  blurIntensity={1}
-                />
-                <ProgressiveBlur
-                  className="pointer-events-none absolute right-0 top-0 h-full w-20 dark:bg-gray-950"
-                  direction="right"
-                  blurIntensity={1}
-                />
-              </div>
+  <ProgressiveBlur
+    className="pointer-events-none absolute left-0 top-0 h-full w-20 dark:bg-gray-950"
+    direction="left"
+    blurIntensity={1}
+  />
+  <ProgressiveBlur
+    className="pointer-events-none absolute right-0 top-0 h-full w-20 dark:bg-gray-950"
+    direction="right"
+    blurIntensity={1}
+  />
+</div>
             </div>
           </div>
         </section>

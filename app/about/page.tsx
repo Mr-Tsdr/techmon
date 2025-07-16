@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div className="flex flex-col">
       <HeroHeader />
-      <section className="w-full bg-white dark:bg-gray-900 py-16 px-6 lg:px-12 lg:py-48" id="about">
+      <section className="w-full bg-white dark:bg-gray-900 py-16 px-6 lg:px-12 lg:py-48">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2 relative h-64 lg:h-[500px]">
             <Image

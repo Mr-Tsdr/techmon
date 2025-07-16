@@ -174,6 +174,14 @@ export default function FooterSection() {
             </svg>
           </Link>
         </div>
+        <div className="mb-6 text-center text-sm text-muted-foreground space-y-2">
+        <p>
+          <strong>Phone:</strong> <a href="tel:+821024185641" className="hover:text-primary transition-colors">+82 10-2418-5641</a>
+        </p>
+        <p>
+          <strong>Address:</strong> Incheon city, South Korea
+        </p>
+      </div>
         <span className="text-muted-foreground block text-center text-sm">
           {" "}
           © {new Date().getFullYear()} TECH MON LLC, All rights reserved 
