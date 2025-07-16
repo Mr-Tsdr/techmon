@@ -74,10 +74,13 @@ export default function HeroSection() {
       { src: "/images/banks/mbank.png", alt: "M Bank", w: 120, h: 40 },
       { src: "/images/banks/tdb.png", alt: "TDB Bank", w: 120, h: 40 },
       { src: "/images/banks/xac.png", alt: "Xac Bank", w: 120, h: 40 },
+      { src: "/images/banks/oyu.jpg", alt: "OyuTolgoi", w: 120, h: 40 },
+      { src: "/images/banks/cu.png", alt: "CU", w: 120, h: 40 },
+      { src: "/images/banks/apu.png", alt: "APU", w: 120, h: 40 },
     ].map((logo, index) => (
-      <div key={index} className="flex px-6">
+      <div key={index} className="flex px-2">
         <Image
-          className="h-auto max-h-12 w-auto dark:invert transition-opacity duration-300 hover:opacity-80"
+          className="h-auto max-h-12 w-auto dark:invert transition-opacity duration-500 hover:opacity-80"
           src={logo.src}
           alt={`${logo.alt} Logo`}
           width={logo.w}

@@ -1,19 +1,27 @@
 "use client";
+
 import Link from "next/link";
 import { Logo } from "./logo";
 import { Menu, X } from "lucide-react";
 import React from "react";
 import { ModeToggle } from "./mode-toggle";
-
-const menuItems = [
-  { name: "Features", href: "#features" },
-  { name: "Service", href: "#services" },
-  { name: "Product", href: "#product" },
-  { name: "About", href: "#about" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/lib/translations";
+import { LanguageDropdown } from "./language";
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
+  const { lang, setLang } = useLanguage();
+
+  const t = translations[lang];
+
+  const menuItems = [
+    { name: t.features, href: "#features" },
+    { name: t.service, href: "#services" },
+    { name: t.product, href: "#product" },
+    { name: t.about, href: "/about" },
+  ];
+
   return (
     <header>
       <nav
@@ -23,17 +31,13 @@ export const HeroHeader = () => {
         <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
-              <Link
-                href="/"
-                aria-label="home"
-                className="flex items-center space-x-2"
-              >
+              <Link href="/" aria-label="home" className="flex items-center space-x-2">
                 <Logo />
               </Link>
 
               <button
                 onClick={() => setMenuState(!menuState)}
-                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                aria-label={menuState ? "Close Menu" : "Open Menu"}
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
                 <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
@@ -71,17 +75,11 @@ export const HeroHeader = () => {
                   ))}
                 </ul>
               </div>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                {/* <Button asChild variant="outline" size="sm">
-                  <Link href="#">
-                    <span>Login</span>
-                  </Link>
-                </Button>
-                <Button asChild size="sm">
-                  <Link href="#">
-                    <span>Sign Up</span>
-                  </Link>
-                </Button> */}
+
+              {/* Language Selector */}
+              <div className="flex items-center gap-4">
+                
+                <LanguageDropdown />
                 <ModeToggle />
               </div>
             </div>
