@@ -8,10 +8,12 @@ import { ModeToggle } from "./mode-toggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/lib/translations";
 import { LanguageDropdown } from "./language";
+import { usePathname } from "next/navigation";
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
   const { lang } = useLanguage();
+  const pathname = usePathname();
 
   const t = translations[lang];
 
@@ -20,7 +22,23 @@ export const HeroHeader = () => {
     { name: t.service, href: "#services" },
     { name: t.product, href: "#product" },
     { name: t.about, href: "/about" },
+    { name: t.demo, href: "/demo" },
   ];
+
+  const isActive = (href: string) => {
+    if (href.startsWith('#')) {
+      // For anchor links, check if we're on home page and the specific anchor
+      if (pathname === '/') {
+        // Default to features being active on home page
+        if (href === '#features') return true;
+        // For other anchors, you might want to add scroll detection later
+        return false;
+      }
+      return false;
+    }
+    // For page routes, check exact match
+    return pathname === href;
+  };
 
   return (
     <header>
@@ -50,7 +68,11 @@ export const HeroHeader = () => {
                     <li key={index}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        className={`block duration-150 ${
+                          isActive(item.href)
+                            ? "text-blue-600 dark:text-blue-400 font-semibold"
+                            : "text-muted-foreground hover:text-accent-foreground"
+                        }`}
                       >
                         <span>{item.name}</span>
                       </Link>
@@ -67,7 +89,11 @@ export const HeroHeader = () => {
                     <li key={index}>
                       <Link
                         href={item.href}
-                        className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        className={`block duration-150 ${
+                          isActive(item.href)
+                            ? "text-blue-600 dark:text-blue-400 font-semibold"
+                            : "text-muted-foreground hover:text-accent-foreground"
+                        }`}
                       >
                         <span>{item.name}</span>
                       </Link>
