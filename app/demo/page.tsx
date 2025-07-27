@@ -119,7 +119,6 @@ export default function Demo() {
             </p>
           </div>
 
-          {/* Tabs */}
           <div className="flex flex-wrap justify-center mb-8 gap-2">
             <div className="flex flex-wrap gap-2 bg-gray-100 dark:bg-gray-800 p-1 rounded-lg">
               {tabs.map((tab) => (
@@ -138,7 +137,6 @@ export default function Demo() {
             </div>
           </div>
 
-          {/* Image Only Content */}
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
             <div className="relative w-full h-[800px]">
               <Image
@@ -150,10 +148,8 @@ export default function Demo() {
               />
             </div>
 
-            {/* Content Section */}
             <div className="p-8 lg:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* Left Column */}
                 <div>
                   <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
                     {t.aboutLandingPage}
@@ -177,7 +173,6 @@ export default function Demo() {
                   </div>
                 </div>
 
-                {/* Right Column */}
                 <div className="space-y-6">
                   <div className="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl">
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
@@ -208,7 +203,6 @@ export default function Demo() {
             </div>
           </div>
 
-          {/* Back to Home Button */}
           <div className="text-center mt-12">
             <Button
               asChild
