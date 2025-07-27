@@ -26,18 +26,6 @@ export default function Demo() {
     { id: "koreanUniv", label: t.koreanUniv },
   ];
 
-  const tabImages = {
-    onlineStore: "/images/demo/onlineshop.jpg",
-    intlTransport: "/images/demo/logistic.jpg",
-    webIntro: "/images/demo/webintro.jpg",
-    travelAgency: "/images/demo/travel.jpg",
-    education: "/images/demo/education.jpg",
-    carSales: "/images/demo/carsale.jpg",
-    electronics: "/images/demo/electric sales.jpg",
-    koreanCourses: "/images/demo/courses.jpg",
-    koreanUniv: "/images/demo/Agency.jpg",
-  };
-
   const tabContent = {
     onlineStore: {
       title: t.onlineStore,
